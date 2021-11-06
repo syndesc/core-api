@@ -6,7 +6,7 @@ interface IUser extends Document {
     username: string;
     tag: string;
     email: string;
-    senha: string;
+    password: string;
     friends: string[];
     blocklist: string[];
     communities: string[];
@@ -39,7 +39,7 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
-    senha: {
+    password: {
         type: String,
         required: true
     },
@@ -63,9 +63,13 @@ const UserSchema = new Schema({
         type: Boolean,
         default: false
     },
+    online: {
+        type: Boolean,
+        default: false
+    },
     profile: {
         type: String,
-        default: '/default.png'
+        default: 'default.png'
     }
 }, {
     timestamps: true

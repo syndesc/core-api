@@ -19,4 +19,12 @@ export default class Utils {
             expiresIn: fastExpire ? (1 * 60 * 60) : (12 * 60 * 60)
         });
     }
+    public static mathRand(min: number, max: number): number {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    public static tag(): string {
+        return `#${this.mathRand(1000,9999)}`;
+    }
 }
